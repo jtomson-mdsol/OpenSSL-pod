@@ -6,17 +6,11 @@ Pod::Spec.new do |s|
   
   s.homepage     = "http://www.openssl.org/"
   s.license      = 'BSD-style Open Source'
-  s.source       = { :git => "https://github.com/endSly/OpenSSL-pod.git", :tag => s.version.to_s }
+  s.source       = { :git => "git@github.com:jtomson-mdsol/OpenSSL-pod.git" }
   s.requires_arc = false
 
-  s.source_files = "include/**/*.h", "build_command.sh"
-
-  s.vendored_libraries    = "lib/*.a"
-
-  s.xcconfig = {
-    "LIBRARY_SEARCH_PATHS" => '"$(PODS_ROOT)/OpenSSL/lib"'
-  }
-
   s.prepare_command = "sh build-libssl.sh"
+  s.source_files = "include/**/*.h"
+  s.vendored_libraries  = "lib/*.a"
 
 end
