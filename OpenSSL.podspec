@@ -10,13 +10,7 @@ Pod::Spec.new do |s|
   s.requires_arc = false
 
   s.source_files = "include/**/*.h", "build_command.sh"
-
   s.vendored_libraries    = "lib/*.a"
-
-  s.xcconfig = {
-    "LIBRARY_SEARCH_PATHS" => '"$(PODS_ROOT)/OpenSSL/lib"'
-  }
-
   s.prepare_command = "sh build-libssl.sh"
 
 end
